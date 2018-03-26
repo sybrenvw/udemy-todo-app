@@ -122,6 +122,7 @@ describe('DELETE /todos/:id', () => {
   });
 
   it('should return 404 if id not found', (done) => {
+    var hexId = new ObjectID().toHexString();
     request(app)
     .delete(`/todos/${hexId}`)
     .expect(404)
